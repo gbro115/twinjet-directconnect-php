@@ -1,0 +1,9 @@
+.idea
+vendor
+.DS_Store
+composer.lock
+.idea/vcs.xml
+.idea/twinjet-directconnect-php.iml
+.idea/php.xml
+.idea/modules.xml
+.idea/misc.xml

@@ -1,0 +1,35 @@
+{
+    "name": "gbro115/twinjet-directconnect-php",
+    "type": "project",
+    "description": "PHP client for the TwinJet DirectConnect API",
+    "keywords": [
+        "API",
+        "TwinJet"
+    ],
+    "authors": [
+        {
+            "name": "George Brownlee",
+            "homepage": "https://github.com/gbro115",
+            "role": "Developer"
+        }
+    ],
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "git@github.com:gbro115/twinjet-directconnect-php.git"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "TwinJet\\": "src/TwinJet/"
+        }
+    },
+    "require": {
+        "php": "^7.0",
+        "psr/log": "^1.0.1"
+    }
+}
