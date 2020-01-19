@@ -31,7 +31,7 @@ Not all actions have been implemented.
  
 ## Handling Exceptions
 
-If the API returns an error or an unexpected response, the PHP API will throw a \ClusterPOS\Exception.
+If the API returns an error or an unexpected response, the PHP API will throw a \TwinJet\Exception.
 
 ## Example usage
 
