@@ -32,14 +32,10 @@ class Jobs {
      *
      * @param Configuration $config
      */
-    function __construct(Configuration $config) {
-
-        //init endpoint
+    function __construct(Configuration $config)
+    {
         $this->_endpoint = new Endpoints($config->getApiVersion());
-
-        //init http connector
         $this->_connector = new HttpConnector();
-
     }
 
     /**
@@ -51,7 +47,8 @@ class Jobs {
      * @throws ApiException
      * @throws ConnectorException
      */
-    public function newJob($data) {
+    public function newJob($data)
+    {
         $endpoint =  $this->_endpoint->getJobsURL();
         return $this->_connector->processRequest('POST', $endpoint, $data);
     }
@@ -65,7 +62,8 @@ class Jobs {
      * @throws ApiException
      * @throws ConnectorException
      */
-    public function cancelJob($data) {
+    public function cancelJob($data)
+    {
         $endpoint =  $this->_endpoint->getJobsURL();
         return $this->_connector->processRequest('DELETE', $endpoint, $data);
     }
@@ -79,7 +77,8 @@ class Jobs {
      * @throws ApiException
      * @throws ConnectorException
      */
-    public function updateJob($data) {
+    public function updateJob($data)
+    {
         $endpoint =  $this->_endpoint->getJobsURL();
         return $this->_connector->processRequest('PATCH', $endpoint, $data);
     }
@@ -93,7 +92,8 @@ class Jobs {
      * @throws ApiException
      * @throws ConnectorException
      */
-    public function getJobStatus($data) {
+    public function getJobStatus($data)
+    {
         $endpoint =  $this->_endpoint->getStatusURL();
         return $this->_connector->processRequest('POST', $endpoint, $data);
     }

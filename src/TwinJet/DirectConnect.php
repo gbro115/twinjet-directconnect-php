@@ -18,8 +18,6 @@ class DirectConnect {
     /**
      * Config object
      *
-     * Holds mid, apikey, platform, api version
-     *
      * @var	Configuration	$_config
      */
     protected $_config;
@@ -36,11 +34,12 @@ class DirectConnect {
     /**
      * Constructor
      *
-     * @param string $apiToken API Access Passcode
+     * @param string $apiToken API Token
      * @param string $version API Version (default 'v1')
      * @throws ConfigurationException
      */
-    public function __construct($apiToken, $version='v1') {
+    public function __construct($apiToken, $version='v1')
+    {
         //set configs
         $this->_config = new Configuration();
         $this->_config->setApiToken($apiToken);;
@@ -52,7 +51,8 @@ class DirectConnect {
      *
      * @return Configuration the config set for the DirectConnect instance
      */
-    public function getConfig() {
+    public function getConfig()
+    {
         return $this->_config;
     }
 
@@ -63,7 +63,8 @@ class DirectConnect {
      *
      * @return Jobs this DirectConnect's Jobs API
      */
-    public function jobs() {
+    public function jobs()
+    {
         if (is_null($this->_jobsAPI)) {
             $this->_jobsAPI = new Jobs($this->_config);
         }

@@ -16,13 +16,6 @@ class Configuration {
     protected $_version = 'v1'; //default
 
     /**
-     * Configuration: API Platform
-     *
-     * @var string $_platform
-     */
-    protected $_platform = 'api'; //default
-
-    /**
      * Configuration: API Token
      *
      * @var string $_apiToken
@@ -34,7 +27,8 @@ class Configuration {
      *
      * @param string $apiToken
      */
-    public function setApiToken($apiToken = '') {
+    public function setApiToken($apiToken = '')
+    {
         $this->_apiToken = $apiToken;
     }
 
@@ -43,7 +37,8 @@ class Configuration {
      *
      * @return string API token
      */
-    public function getApiToken() {
+    public function getApiToken()
+    {
         return $this->_apiToken;
     }
 
@@ -54,12 +49,11 @@ class Configuration {
      * @return void
      * @throws ConfigurationException
      */
-    public function setApiVersion($version = '') {
-        //make sure it's not blank
-        //if blank, don't set it and use default declared above
+    public function setApiVersion($version = '')
+    {
         if($version != 'v1')
         {
-            throw new ConfigurationException('Only version 1 is supported in this version.');
+            throw new ConfigurationException('Only version 1 is supported in this release.');
         }
         if (strlen($version) > 0)
         {
@@ -72,7 +66,8 @@ class Configuration {
      *
      * @return string version
      */
-    public function getApiVersion() {
+    public function getApiVersion()
+    {
         return $this->_version;
     }
 }

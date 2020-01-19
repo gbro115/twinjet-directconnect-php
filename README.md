@@ -1,7 +1,7 @@
 TwinJet Direct Connect PHP API
 ==================
 
-Composer ready PHP wrapper for [TwinJet DirectConnect](https://twinjet.co/developer/).
+Composer-ready PHP wrapper for [TwinJet DirectConnect](https://twinjet.co/developer/).
  
 ## Installation
 
@@ -93,3 +93,6 @@ $newJobPayload = array(
 ```
 
 See examples.php for further examples.
+
+## Credits
+Based on the [Bambora API PHP Client](https://github.com/bambora-na/beanstream-php)

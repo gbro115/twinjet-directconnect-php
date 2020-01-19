@@ -14,21 +14,20 @@ class Endpoints {
     CONST BASE_URL_TWINJET = 'https://www.twinjet.co';
 
     /**
-     * Endpoint URL holders
-     *
-     * Holds each of the URLS for the API endpoints
-     * Version is added in the constructor
+     * Endpoint URLs
      *
      */
     protected $jobsURL;
     protected $statusURL;
+    protected $addressVerificationURL;
 
     /**
-     * Endpoint: incoming API Version
+     * Endpoint: API version
      *
      * @var string $_version
      */
     protected $_version;
+
 
     /**
      * Constructor
@@ -54,8 +53,6 @@ class Endpoints {
         $this->_version = $version;
 
     }
-
-    //methods to build out and return endpoints
 
     /**
      * getJobsURL() function
