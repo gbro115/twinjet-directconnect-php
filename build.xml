@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="twinjet-directconnect-php" default="composer">
+    <property name="composer" value="/usr/local/bin/composer"/>
+    <target name="php-check">
+        <condition property="php" value="php">
+            <not>
+                <isset property="${php}"/>
+            </not>
+        </condition>
+    </target>
+
+    <target name="composer" depends="php-check" description="Run composer update">
+        <exec executable="${php}">
+            <arg value="${composer}"/>
+            <arg value="update"/>
+        </exec>
+    </target>
+
+</project>
