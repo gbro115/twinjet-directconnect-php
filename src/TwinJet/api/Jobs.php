@@ -1,5 +1,5 @@
 <?php
-namespace TwinJet;
+namespace TwinJet\api;
 
 /**
  * Jobs class to submit, update and cancel jobs.

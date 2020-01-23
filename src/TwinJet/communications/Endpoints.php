@@ -1,5 +1,5 @@
 <?php
-namespace TwinJet;
+namespace TwinJet\communications;
 
 /**
  * Endpoints class to build, format and return API endpoint urls based on incoming platform and version

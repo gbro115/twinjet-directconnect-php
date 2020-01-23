@@ -1,7 +1,6 @@
 <?php
 
-namespace TwinJet;
-
+namespace TwinJet\communications;
 
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Exception\ConnectException;

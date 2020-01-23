@@ -1,6 +1,9 @@
 <?php
 namespace TwinJet;
 
+use InvalidArgumentException;
+use TwinJet\ConfigurationException;
+
 /**
  * Configuration class to handle version and API token
  *
@@ -53,7 +56,7 @@ class Configuration {
     {
         if($version != 'v1')
         {
-            throw new ConfigurationException('Only version 1 is supported in this release.');
+            throw new InvalidArgumentException('Only version 1 is supported in this release.');
         }
         if (strlen($version) > 0)
         {
