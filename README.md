@@ -3,6 +3,8 @@ TwinJet Direct Connect PHP API
 
 Composer-ready PHP wrapper for [TwinJet DirectConnect](https://twinjet.co/developer/).
  
+Coming soon: OOP implementation
+
 ## Installation
 
 The recommended way to install the library is using [Composer](https://getcomposer.org).
