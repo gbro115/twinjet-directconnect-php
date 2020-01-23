@@ -1,6 +1,6 @@
 <?php
 
-namespace communications;
+namespace unit;
 
 use PHPUnit\Framework\TestCase;
 use TwinJet\communications\Endpoints;
