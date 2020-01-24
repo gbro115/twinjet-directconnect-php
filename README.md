@@ -2,8 +2,14 @@ TwinJet Direct Connect PHP API
 ==================
 
 Composer-ready PHP wrapper for [TwinJet DirectConnect](https://twinjet.co/developer/).
- 
-Coming soon: OOP implementation
+
+Implemented calls:
+1. Create Job
+2. Job Status
+
+Not yet implemented:
+1. Update Job
+2. Cancel Job
 
 ## Installation
 
