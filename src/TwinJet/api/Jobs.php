@@ -65,7 +65,6 @@ class Jobs {
     public function newJob($job)
     {
         $endpoint =  $this->_endpoint->getJobsURL();
-        echo(json_encode($job, JSON_PRETTY_PRINT));
         return $this->_connector->processRequest('POST', $endpoint, $job);
     }
 
