@@ -1,6 +1,6 @@
 <?php
 
-namespace unit;
+namespace tests\TwinJet\unit;
 
 use PHPUnit\Framework\TestCase;
 use TwinJet\models\Address;

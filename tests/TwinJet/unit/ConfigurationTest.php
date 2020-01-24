@@ -1,7 +1,7 @@
 <?php
 
 
-namespace unit;
+namespace tests\TwinJet\unit;
 
 
 use InvalidArgumentException;

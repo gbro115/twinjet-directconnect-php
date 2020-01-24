@@ -2,6 +2,8 @@
 
 namespace TwinJet;
 
+use TwinJet\api\Jobs;
+
 require_once 'Exception.php';
 require_once 'Configuration.php';
 require_once 'communications/Endpoints.php';
@@ -35,10 +37,9 @@ class DirectConnect {
      * Constructor
      *
      * @param string $apiToken API Token
-     * @param string $version API Version (default 'v1')
-     * @throws ConfigurationException
+     * @param string $version API Version (default 1)
      */
-    public function __construct($apiToken, $version='v1')
+    public function __construct($apiToken, $version)
     {
         //set configs
         $this->_config = new Configuration();

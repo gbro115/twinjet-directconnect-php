@@ -1,6 +1,14 @@
 <?php
 namespace TwinJet\api;
 
+use TwinJet\ApiException;
+use TwinJet\communications\Endpoints;
+use TwinJet\communications\HttpConnector;
+use TwinJet\Configuration;
+use TwinJet\ConnectorException;
+use function json_encode;
+use const JSON_PRETTY_PRINT;
+
 /**
  * Jobs class to submit, update and cancel jobs.
  * Allows for querying of the status/history for an existing job.
@@ -13,7 +21,7 @@ class Jobs {
     /**
      * Jobs Endpoint object
      *
-     * @var string $_endpoint
+     * @var Endpoints $_endpoint
      */
     protected $_endpoint;
 
@@ -23,6 +31,12 @@ class Jobs {
      * @var    HttpConnector $_connector
      */
     protected $_connector;
+
+    /**
+     * API key, used in Job Status and Cancel Job requests
+     * @var string $_apiToken
+     */
+    protected $_apiToken;
 
     /**
      * Constructor
@@ -36,41 +50,43 @@ class Jobs {
     {
         $this->_endpoint = new Endpoints($config->getApiVersion());
         $this->_connector = new HttpConnector();
+        $this->_apiToken = $config->getApiToken();
     }
 
     /**
      * newJob() function - Create a new Job using the provided data
      * @link https://twinjet.co/developer/#newjob
      *
-     * @param array $data payload
+     * @param $job
      * @return array Result
      * @throws ApiException
      * @throws ConnectorException
      */
-    public function newJob($data)
+    public function newJob($job)
     {
         $endpoint =  $this->_endpoint->getJobsURL();
-        return $this->_connector->processRequest('POST', $endpoint, $data);
+        echo(json_encode($job, JSON_PRETTY_PRINT));
+        return $this->_connector->processRequest('POST', $endpoint, $job);
     }
 
     /**
      * cancelJob() function - Cancel an existing Job using the provided data
      * @link https://twinjet.co/developer/#canceljob
      *
-     * @param array $data payload
      * @return array Result
      * @throws ApiException
      * @throws ConnectorException
      */
-    public function cancelJob($data)
+    public function cancelJob($job)
     {
+
         $endpoint =  $this->_endpoint->getJobsURL();
         return $this->_connector->processRequest('DELETE', $endpoint, $data);
     }
 
     /**
-     * cancelJob() function - Update an existing Job using the provided data
-     * @link https://twinjet.co/developer/#canceljob
+     * updateJob() function - Update an existing Job using the provided data
+     * @link https://twinjet.co/developer/
      *
      * @param array $data payload
      * @return array Result
@@ -95,6 +111,17 @@ class Jobs {
     public function getJobStatus($data)
     {
         $endpoint =  $this->_endpoint->getStatusURL();
-        return $this->_connector->processRequest('POST', $endpoint, $data);
+        echo json_encode($data, JSON_PRETTY_PRINT);
+        #return $this->_connector->processRequest('POST', $endpoint, $data);
+    }
+
+    /**
+     * Set Jobs URL during unit tests.
+     *
+     * @param $url
+     */
+    private function setJobsUrl($url)
+    {
+        $this->_endpoint->setJobsUrl($url);
     }
 }

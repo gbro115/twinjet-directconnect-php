@@ -5,6 +5,8 @@ namespace TwinJet\communications;
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Exception\ConnectException;
 use \GuzzleHttp\Exception\RequestException;
+use TwinJet\ApiException;
+use TwinJet\ConnectorException;
 
 /**
  * HTTPConnector class to handle HTTP requests to the REST API

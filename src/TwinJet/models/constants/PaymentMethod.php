@@ -36,7 +36,7 @@ class PaymentMethod
     /**
      * Cash on delivery
      */
-    const CUSTOMER_CASH =6;
+    const CUSTOMER_CASH = 6;
 
     /**
      * Get an array of the constants defined in the class.

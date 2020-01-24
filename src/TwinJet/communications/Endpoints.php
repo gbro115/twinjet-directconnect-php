@@ -38,7 +38,7 @@ class Endpoints {
     {
 
         //assign endpoints
-        $baseUrl =  self::BASE_URL_TWINJET . '/api/' . '{0}';
+        $baseUrl =  self::BASE_URL_TWINJET . '/api/v' . '{0}';
 
         // Jobs
         $this->jobsURL = $baseUrl . '/jobs';
@@ -65,6 +65,16 @@ class Endpoints {
     }
 
     /**
+     * Set Jobs URL during unit tests
+     *
+     * @param string $url
+     */
+    public function setJobsUrl(string $url)
+    {
+        $this->jobsURL = $url;
+    }
+
+    /**
      * getStatusURL() function
      *
      * @return string	Endpoint URL
@@ -83,5 +93,6 @@ class Endpoints {
     {
         return str_replace(array('{0}'), array($this->_version), $this->addressVerificationURL);
     }
+
 
 }

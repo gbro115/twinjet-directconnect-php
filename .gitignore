@@ -7,3 +7,4 @@ composer.lock
 .idea/php.xml
 .idea/modules.xml
 .idea/misc.xml
+.phpunit.result.cache

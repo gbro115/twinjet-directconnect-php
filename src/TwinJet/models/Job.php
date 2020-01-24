@@ -9,11 +9,8 @@ use JsonException;
 use JsonSerializable;
 use ReflectionException;
 use TwinJet\models\constants\PaymentMethod;
-use function array_push;
 use function in_array;
 use function is_null;
-use function json_decode;
-use function json_encode;
 
 /**
  * Class Job
@@ -590,7 +587,8 @@ class Job implements JsonSerializable
      * @inheritDoc
      * $this->lastEaten->format(DateTime::ISO8601)
      *
-     */public function jsonSerialize()
+     */
+    public function jsonSerialize()
     {
         if (is_null($this->isLive()) ||
             is_null($this->_apiToken) ||
@@ -624,6 +622,7 @@ class Job implements JsonSerializable
             'order_contact_phone'=>$this->_orderContactPhone,
             'pick_address'=>$this->_pickupAddress,
             'deliver_address'=>$this->_deliveryAddress,
+            'payment_method'=>$this->_paymentMethod,
             'ready_time'=>$this->_readyTime->format(DateTime::ISO8601),
             'deliver_from_time'=>$this->_deliverFromDateTime->format(DateTime::ISO8601),
             'deliver_to_time'=>$this->_deliverToDateTime->format(DateTime::ISO8601),
