@@ -16,7 +16,7 @@ class ConfigurationTest extends TestCase
     public function testToken(): void
     {
         $token = "TOKEN123456";
-        $apiVersion = "v1";
+        $apiVersion = 1;
         $c = new Configuration();
         $c->setApiToken($token);
         $this->assertEquals($token, $c->getApiToken());
@@ -27,7 +27,7 @@ class ConfigurationTest extends TestCase
      */
     public function testApiVersion(): void
     {
-        $apiVersion = "v1";
+        $apiVersion = 1;
         $c = new Configuration();
         $c->setApiVersion($apiVersion);
         $this->assertEquals($apiVersion, $c->getApiVersion());

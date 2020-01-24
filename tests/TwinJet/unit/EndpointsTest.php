@@ -13,7 +13,7 @@ class EndpointsTest extends TestCase
      */
     public function testGetStatusURL()
     {
-        $ep = new Endpoints('v1');
+        $ep = new Endpoints(1);
         $this->assertEquals('https://www.twinjet.co/api/v1/status', $ep->getStatusURL());
     }
 
@@ -22,7 +22,7 @@ class EndpointsTest extends TestCase
      */
     public function testGetAddressVerificationURL()
     {
-        $ep = new Endpoints('v1');
+        $ep = new Endpoints(1);
         $this->assertEquals('https://www.twinjet.co/api/v1/validate', $ep->getAddressVerificationURL());
     }
 
@@ -31,7 +31,7 @@ class EndpointsTest extends TestCase
      */
     public function testGetJobsURL()
     {
-        $ep = new Endpoints('v1');
+        $ep = new Endpoints(1);
         $this->assertEquals('https://www.twinjet.co/api/v1/jobs', $ep->getJobsURL());
     }
 }
