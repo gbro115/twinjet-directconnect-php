@@ -19,7 +19,7 @@ The recommended way to install the library is using [Composer](https://getcompos
 ```json
 {
     "require": {
-        "gbro115/twinjet-directconnect-php: "dev-master"
+        "gbro115/twinjet-directconnect-php: "^1.1"
     }
 }
 ```
