@@ -420,9 +420,9 @@ class Job implements JsonSerializable
     /**
      * 	Payment method for the delivery.
      *
-     * @return PaymentMethod
+     * @return int
      */
-    public function getPaymentMethod(): PaymentMethod
+    public function getPaymentMethod(): int
     {
         return $this->_paymentMethod;
     }
@@ -430,7 +430,7 @@ class Job implements JsonSerializable
     /**
      *    Payment method for the delivery.
      *
-     * @param PaymentMethod $paymentMethod
+     * @param int $paymentMethod
      * @throws ReflectionException
      */
     public function setPaymentMethod($paymentMethod): void
