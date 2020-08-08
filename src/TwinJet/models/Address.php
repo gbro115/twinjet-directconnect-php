@@ -237,6 +237,7 @@ class Address implements JsonSerializable
             'state'=>$this->_state,
             'zip_code'=>$this->_zipCode,
             'contact'=>$this->_contact,
+            'phone_number'=>$this->_phoneNumber,
             'special_instructions'=>$this->_specialInstructions
         ];
     }
