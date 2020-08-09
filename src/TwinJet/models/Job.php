@@ -610,11 +610,6 @@ class Job implements JsonSerializable
             throw new JsonException("Order total was not specified");
         }
 
-        if(is_null($this->_deliveryFee))
-        {
-            throw new JsonException("Delivery fee was not specified");
-        }
-
         return [
             'live' => $this->_isLive,
             'api_token' => $this->_apiToken,
@@ -629,8 +624,12 @@ class Job implements JsonSerializable
             'service_id'=>$this->_serviceId,
             'order_total'=>$this->_orderTotal,
             'tip'=>$this->_tip,
+            'reference'=>$this->_reference,
+            'external_id'=>$this->_externalId,
             'webhook_url'=>$this->_webhookUrl,
-            'job_items'=>$this->_jobItems
+            'job_items'=>$this->_jobItems,
+            'photo'=>$this->_requirePhotoOnDelivery,
+
         ];
     }
 
