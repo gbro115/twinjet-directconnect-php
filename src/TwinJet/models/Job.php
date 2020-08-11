@@ -629,7 +629,7 @@ class Job implements JsonSerializable
             'webhook_url'=>$this->_webhookUrl,
             'job_items'=>$this->_jobItems,
             'photo'=>$this->_requirePhotoOnDelivery,
-
+            'special_instructions'=>$this->_specialInstructions,
         ];
     }
 
