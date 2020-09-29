@@ -68,17 +68,17 @@ class Jobs {
         return $this->_connector->processRequest('POST', $endpoint, $job);
     }
 
-    /**
-     * cancelJob() function - Cancel an existing Job using the provided data
-     * @link https://twinjet.co/developer/#canceljob
-     *
-     * @return array Result
-     * @throws ApiException
-     * @throws ConnectorException
-     */
-    public function cancelJob($job)
+	/**
+	 * cancelJob() function - Cancel an existing Job using the provided data
+	 * @link https://twinjet.co/developer/#canceljob
+	 *
+	 * @param $data
+	 * @return array Result
+	 * @throws ApiException
+	 * @throws ConnectorException
+	 */
+    public function cancelJob($data)
     {
-
         $endpoint =  $this->_endpoint->getJobsURL();
         return $this->_connector->processRequest('DELETE', $endpoint, $data);
     }
