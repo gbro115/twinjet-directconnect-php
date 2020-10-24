@@ -12,16 +12,10 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/TwinJet/unit</directory>
+            <directory suffix="Test.php">./tests/Tests/TwinJet/unit</directory>
         </testsuite>
-
         <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/TwinJet/integration</directory>
+            <directory suffix="Test.php">./tests/Tests/TwinJet/integration</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./app</directory>
-        </whitelist>
-    </filter>
 </phpunit>

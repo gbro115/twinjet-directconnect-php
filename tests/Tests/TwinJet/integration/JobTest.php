@@ -1,7 +1,7 @@
 <?php
 
 
-namespace tests\TwinJet\integration;
+namespace Tests\TwinJet\integration;
 
 use DateTimeZone;
 use PHPUnit\Framework\TestCase;
@@ -105,7 +105,8 @@ class JobTest extends TestCase
         "state": "CA",
         "zip_code": "123456",
         "contact": "P. Sherman",
-        "special_instructions": "Large delivery"
+        "special_instructions": "Large delivery",
+        "phone_number" : "5141234567"
     },
     "deliver_address": {
         "address_name": "Mr J. Recipient",
@@ -115,7 +116,8 @@ class JobTest extends TestCase
         "state": "CA",
         "zip_code": "876543",
         "contact": "Mr Recipient",
-        "special_instructions": "Ring doorbell"
+        "special_instructions": "Ring doorbell",
+        "phone_number" : "4381234567"
     },
     "ready_time": "2019-02-15T15:16:17-0500",
     "deliver_from_time": "2019-02-15T18:16:17-0500",
@@ -136,13 +138,16 @@ class JobTest extends TestCase
             "description": "SKU two",
             "sku": "SKU2"
         }
-    ]
+    ],
+    "reference" : "ReferenceCode",
+    "external_id" : "External ID",
+    "photo" : true,
+    "special_instructions" : "Job-level special instructions"
 }
 JSON;
 
-        $expectedJson = json_decode($expected);
-
-        $this->assertEquals($expectedJson, json_decode(json_encode($job)));
+	    $expectedJson = json_decode($expected);
+	    $this->assertEquals($expectedJson,json_decode(json_encode($job)));
     }
 
     /**
@@ -225,7 +230,7 @@ JSON;
         $job->setDeliveryAddress($deliveryAddress);
         $job->setSpecialInstructions("Job-level special instructions");
 
-        $expected = <<<JSON
+	    $expected = <<<JSON
 {
     "live": true,
     "api_token": "APITOKEN1234567",
@@ -239,7 +244,8 @@ JSON;
         "state": "CA",
         "zip_code": "123456",
         "contact": "P. Sherman",
-        "special_instructions": "Large delivery"
+        "special_instructions": "Large delivery",
+        "phone_number" : "5141234567"
     },
     "deliver_address": {
         "address_name": "Mr J. Recipient",
@@ -249,7 +255,8 @@ JSON;
         "state": "CA",
         "zip_code": "876543",
         "contact": "Mr Recipient",
-        "special_instructions": "Ring doorbell"
+        "special_instructions": "Ring doorbell",
+        "phone_number": "4381234567"
     },
     "ready_time": "2019-02-15T15:16:17-0500",
     "deliver_from_time": "2019-02-15T18:16:17-0500",
@@ -270,7 +277,11 @@ JSON;
             "description": "SKU two",
             "sku": "SKU2"
         }
-    ]
+    ],
+    "reference": "ReferenceCode",
+    "external_id": "External ID",
+    "photo": true,
+    "special_instructions" : "Job-level special instructions"
 }
 JSON;
         $actualJson = json_decode(json_encode($jobsApi->newJob($job)))->json;

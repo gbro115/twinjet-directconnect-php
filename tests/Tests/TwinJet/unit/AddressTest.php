@@ -35,7 +35,8 @@ class AddressTest extends TestCase
     "state": "CA",
     "zip_code": "123456",
     "contact": "P. Sherman",
-    "special_instructions": "Bring fish food please"
+    "special_instructions": "Bring fish food please",
+    "phone_number" : "5141234567"
 }
 JSON;
 

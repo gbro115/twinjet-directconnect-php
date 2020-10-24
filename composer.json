@@ -33,6 +33,6 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",
-      "ext-json": "*"
+        "ext-json": "*"
     }
 }
